@@ -1,7 +1,10 @@
 {
   "name": "pomodoro",
+  "description": "Simple pomodoro timer",
+  "homepage": "https://ubermanu.github.io/pomodoro",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
   "dependencies": {
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
