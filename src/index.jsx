@@ -5,12 +5,12 @@ import * as serviceWorker from './serviceWorker';
 
 // Request for notifications
 if ('Notification' in window) {
-  Notification.requestPermission()
+  Notification.requestPermission();
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
