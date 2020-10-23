@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Button, Divider } from 'antd';
+import useSound from 'use-sound';
+
 import './App.less';
+import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg';
 
 const App = () => {
   const [timer, setTimer] = useState(0);
   const [countdown, setCountdown] = useState(0);
+  const [play] = useSound(bellSfx);
 
   const startTimer = seconds => {
     clearInterval(timer);
@@ -16,7 +20,7 @@ const App = () => {
         console.log("Time's up!");
         clearInterval(id);
         sendNotification("It's time to chill for a bit!");
-        // TODO: Play sound
+        play();
       }
     }, 1000);
 
