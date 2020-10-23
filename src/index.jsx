@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// Reset styles of the application.
+import "normalize.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
