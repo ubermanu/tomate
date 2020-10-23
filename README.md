@@ -1,6 +1,6 @@
 # Tomate
 
-A dead simple Pomodor timer.
+A simple pomodoro timer.
 
 ### Usage
 
