@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Divider } from 'antd';
+import { Button, Space } from 'antd';
+import { Typography } from 'antd';
 import useSound from 'use-sound';
 
 import './App.less';
 import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg';
+
+const { Title } = Typography;
 
 const App = () => {
   const [timer, setTimer] = useState(0);
@@ -35,26 +38,43 @@ const App = () => {
     }
   };
 
+  const formatMinutes = seconds => {
+    return Math.floor(countdown / 60)
+      .toString()
+      .padStart(2, '0');
+  };
+
+  const formatSeconds = seconds => {
+    return (countdown % 60).toString().padStart(2, '0');
+  };
+
   return (
-    <div className="App" style={{ textAlign: 'center' }}>
-      <h1>
+    <Space direction="vertical" style={{ textAlign: 'center', margin: '3rem' }}>
+      <Title>
         <span role="img" aria-label="Tomate">
           🍅
         </span>
-      </h1>
+      </Title>
       {countdown > 0 && (
-        <p>
-          {Math.floor(countdown / 60)}: {countdown % 60}
-        </p>
+        <Title
+          level={2}
+          style={{
+            color: 'white',
+            textShadow: '1px 1px 0 rgba(0, 0, 0, 0.4)',
+          }}
+        >
+          {formatMinutes(countdown)} : {formatSeconds(countdown)}
+        </Title>
       )}
-      <Button type="primary" onClick={() => startTimer(25 * 60)}>
-        25:00
-      </Button>
-      <Divider type="vertical" />
-      <Button type="primary" onClick={() => startTimer(45 * 60)}>
-        45:00
-      </Button>
-    </div>
+      <Space>
+        <Button type="primary" onClick={() => startTimer(25 * 60)}>
+          25:00
+        </Button>
+        <Button type="primary" onClick={() => startTimer(45 * 60)}>
+          45:00
+        </Button>
+      </Space>
+    </Space>
   );
 };
 
