@@ -2,32 +2,38 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 import './App.less';
 
-const COUNTDOWN_25 = 25 * 60;
-const COUNTDOWN_45 = 45 * 60;
-
 const App = () => {
-  let timer;
+  const [timer, setTimer] = useState(0);
   const [countdown, setCountdown] = useState(0);
 
-  const startTimer = () => {
-    setCountdown(COUNTDOWN_25);
+  const startTimer = seconds => {
     clearInterval(timer);
-    timer = setInterval(() => {
+    setCountdown(seconds - 1);
+
+    const id = setInterval(() => {
       setCountdown(countdown => countdown - 1);
       if (countdown <= 0) {
+        clearInterval(timer);
         // TODO: Play sound
         // TODO: Show notification
       }
     }, 1000);
+
+    setTimer(id);
   };
 
   return (
     <div className="App">
-      <p>
-        {Math.floor(countdown / 60)}: {countdown % 60}
-      </p>
-      <Button type="primary" onClick={startTimer}>
-        Button
+      {countdown > 0 && (
+        <p>
+          {Math.floor(countdown / 60)}: {countdown % 60}
+        </p>
+      )}
+      <Button type="primary" onClick={() => startTimer(25 * 60)}>
+        25:00
+      </Button>
+      <Button type="primary" onClick={() => startTimer(45 * 60)}>
+        45:00
       </Button>
     </div>
   );
