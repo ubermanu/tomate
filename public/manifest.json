@@ -3,14 +3,9 @@
   "description": "A simple pomodoro timer",
   "icons": [
     {
-      "src": "icons8-tomato-48.png",
+      "src": "tomato-144.png",
       "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "icons8-tomato-96.png",
-      "type": "image/png",
-      "sizes": "96x96"
+      "sizes": "144x144"
     }
   ],
   "start_url": ".",

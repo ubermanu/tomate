@@ -12,4 +12,3 @@ A simple pomodoro timer.
 ### Credits
 
 * "Bike, Bell Ding, Single, 01-01.wav" by InspectorJ
-* Tomato icon by Icons8
