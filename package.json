@@ -1,7 +1,7 @@
 {
-  "name": "pomodoro",
+  "name": "tomate",
   "description": "Simple pomodoro timer",
-  "homepage": "https://ubermanu.github.io/pomodoro",
+  "homepage": "https://ubermanu.github.io/tomate",
   "version": "0.1.0",
   "private": false,
   "license": "MIT",
