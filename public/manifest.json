@@ -1,7 +1,18 @@
 {
   "name": "Tomate",
   "description": "A simple pomodoro timer",
-  "icons": [],
+  "icons": [
+    {
+      "src": "icons8-tomato-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons8-tomato-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
