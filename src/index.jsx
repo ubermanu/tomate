@@ -6,9 +6,14 @@ import * as serviceWorker from './serviceWorker';
 // Reset styles of the application.
 import "normalize.css";
 
+// Request for notifications
+if ('Notification' in window) {
+  Notification.requestPermission()
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
