@@ -13,13 +13,22 @@ const App = () => {
     const id = setInterval(() => {
       setCountdown(countdown => countdown - 1);
       if (countdown <= 0) {
-        clearInterval(timer);
+        console.log("Time's up!");
+        clearInterval(id);
+        sendNotification("It's time to chill for a bit!");
         // TODO: Play sound
-        // TODO: Show notification
       }
     }, 1000);
 
     setTimer(id);
+  };
+
+  const sendNotification = body => {
+    if ('Notification' in window) {
+      new Notification('🍅', {
+        body,
+      });
+    }
   };
 
   return (
