@@ -10,3 +10,5 @@ A dead simple Pomodor timer.
 * Once the timer expires, repeat the process.
 
 ### Credits
+
+* "Bike, Bell Ding, Single, 01-01.wav" by InspectorJ
