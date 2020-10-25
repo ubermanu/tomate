@@ -9,25 +9,25 @@ import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg
 const { Title } = Typography;
 
 const App = () => {
-  const [timer, setTimer] = useState(0);
+  let timer;
   const [countdown, setCountdown] = useState(0);
   const [play] = useSound(bellSfx);
+
+  const tick = () => {
+    setCountdown(prevCountdown => prevCountdown - 1);
+
+    if (countdown <= 0) {
+      console.log("Time's up!");
+      clearInterval(timer);
+      sendNotification("It's time to chill for a bit!");
+      play();
+    }
+  };
 
   const startTimer = seconds => {
     clearInterval(timer);
     setCountdown(seconds - 1);
-
-    const id = setInterval(() => {
-      setCountdown(countdown => countdown - 1);
-      if (countdown <= 0) {
-        console.log("Time's up!");
-        clearInterval(id);
-        sendNotification("It's time to chill for a bit!");
-        play();
-      }
-    }, 1000);
-
-    setTimer(id);
+    timer = setInterval(tick, 1000);
   };
 
   const sendNotification = body => {
@@ -39,13 +39,13 @@ const App = () => {
   };
 
   const formatMinutes = seconds => {
-    return Math.floor(countdown / 60)
+    return Math.floor(seconds / 60)
       .toString()
       .padStart(2, '0');
   };
 
   const formatSeconds = seconds => {
-    return (countdown % 60).toString().padStart(2, '0');
+    return (seconds % 60).toString().padStart(2, '0');
   };
 
   return (
