@@ -6,7 +6,7 @@ import useSound from 'use-sound';
 import './App.less';
 import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const App = () => {
   let timer;
@@ -16,7 +16,7 @@ const App = () => {
   const tick = timer => {
     // countdown is not accessible in this scope, to investigate
     let tmp = 0;
-    setCountdown(prevCountdown => tmp = prevCountdown - 1);
+    setCountdown(prevCountdown => (tmp = prevCountdown - 1));
 
     if (tmp <= 0) {
       console.log("Time's up!");
@@ -66,15 +66,16 @@ const App = () => {
         </Button>
       </Space>
       {countdown > 0 && (
-        <Title
-          level={2}
+        <Text
           style={{
+            fontSize: '48px',
+            marginTop: '0.5em',
             color: 'white',
             textShadow: '1px 1px 0 rgba(0, 0, 0, 0.4)',
           }}
         >
           {formatMinutes(countdown)} : {formatSeconds(countdown)}
-        </Title>
+        </Text>
       )}
     </Space>
   );
