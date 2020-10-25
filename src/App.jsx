@@ -58,7 +58,7 @@ const App = () => {
         </span>
       </Title>
       <Space>
-        <Button type="primary" onClick={() => startTimer(2)}>
+        <Button type="primary" onClick={() => startTimer(25 * 60)}>
           25:00
         </Button>
         <Button type="primary" onClick={() => startTimer(45 * 60)}>
