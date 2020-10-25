@@ -14,9 +14,11 @@ const App = () => {
   const [play] = useSound(bellSfx);
 
   const tick = timer => {
-    setCountdown(prevCountdown => prevCountdown - 1);
+    // countdown is not accessible in this scope, to investigate
+    let tmp = 0;
+    setCountdown(prevCountdown => tmp = prevCountdown - 1);
 
-    if (countdown <= 0) {
+    if (tmp <= 0) {
       console.log("Time's up!");
       clearInterval(timer);
       sendNotification("It's time to chill for a bit!");
