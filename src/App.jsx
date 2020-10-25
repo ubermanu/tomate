@@ -9,11 +9,11 @@ import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg
 const { Title } = Typography;
 
 const App = () => {
-  const [timer, setTimer] = useState(0);
+  let timer;
   const [countdown, setCountdown] = useState(0);
   const [play] = useSound(bellSfx);
 
-  const tick = () => {
+  const tick = timer => {
     setCountdown(prevCountdown => prevCountdown - 1);
 
     if (countdown <= 0) {
@@ -27,8 +27,7 @@ const App = () => {
   const startTimer = seconds => {
     clearInterval(timer);
     setCountdown(seconds - 1);
-    const id = setInterval(tick, 1000);
-    setTimer(id);
+    timer = setInterval(() => tick(timer), 1000);
   };
 
   const sendNotification = body => {
@@ -57,7 +56,7 @@ const App = () => {
         </span>
       </Title>
       <Space>
-        <Button type="primary" onClick={() => startTimer(25 * 60)}>
+        <Button type="primary" onClick={() => startTimer(2)}>
           25:00
         </Button>
         <Button type="primary" onClick={() => startTimer(45 * 60)}>
