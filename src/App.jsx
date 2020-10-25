@@ -56,6 +56,14 @@ const App = () => {
           🍅
         </span>
       </Title>
+      <Space>
+        <Button type="primary" onClick={() => startTimer(25 * 60)}>
+          25:00
+        </Button>
+        <Button type="primary" onClick={() => startTimer(45 * 60)}>
+          45:00
+        </Button>
+      </Space>
       {countdown > 0 && (
         <Title
           level={2}
@@ -67,14 +75,6 @@ const App = () => {
           {formatMinutes(countdown)} : {formatSeconds(countdown)}
         </Title>
       )}
-      <Space>
-        <Button type="primary" onClick={() => startTimer(25 * 60)}>
-          25:00
-        </Button>
-        <Button type="primary" onClick={() => startTimer(45 * 60)}>
-          45:00
-        </Button>
-      </Space>
     </Space>
   );
 };
