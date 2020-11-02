@@ -11,6 +11,7 @@ const { Title, Text } = Typography;
 const App = () => {
   const [timer, setTimer] = useState(0);
   const [countdown, setCountdown] = useState(0);
+  const [giggle, setGiggle] = useState(false);
   const [play] = useSound(bellSfx);
 
   const tick = timer => {
@@ -22,6 +23,7 @@ const App = () => {
       console.log("Time's up!");
       clearInterval(timer);
       sendNotification("It's time to chill for a bit!");
+      setGiggle(true);
       play();
     }
   };
@@ -29,6 +31,7 @@ const App = () => {
   const startTimer = seconds => {
     clearInterval(timer);
     setCountdown(seconds - 1);
+    setGiggle(false);
     const id = setInterval(() => tick(id), 1000);
     setTimer(id);
   };
@@ -53,7 +56,7 @@ const App = () => {
 
   return (
     <Space direction="vertical" style={{ textAlign: 'center', margin: '3rem' }}>
-      <Title>
+      <Title className={giggle && 'App-Tomato-TimesUp'}>
         <span role="img" aria-label="Tomate">
           🍅
         </span>
