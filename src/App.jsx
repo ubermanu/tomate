@@ -72,7 +72,7 @@ const App = () => {
       {countdown > 0 && (
         <Text
           style={{
-            fontSize: '48px',
+            fontSize: '44px',
             marginTop: '0.5em',
             color: 'white',
             textShadow: '1px 1px 0 rgba(0, 0, 0, 0.4)',
