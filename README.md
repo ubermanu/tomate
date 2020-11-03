@@ -6,8 +6,8 @@ A simple pomodoro timer.
 
 * Select a working duration.
 * Once the timer expires a sound is played, and a notification pops.
-* Select a pause duration.
-* Once the timer expires, repeat the process.
+* Take a break.
+* Repeat the process.
 
 ### Credits
 
