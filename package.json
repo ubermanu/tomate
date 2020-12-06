@@ -21,6 +21,7 @@
     "gh-pages": "^3.1.0",
     "prettier": "2.1.2",
     "vite": "^1.0.0-rc.13",
+    "vite-plugin-pwa": "^0.1.7",
     "vite-plugin-react": "^4.0.0"
   }
 }
