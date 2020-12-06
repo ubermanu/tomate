@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Space } from 'antd';
-import { Typography } from 'antd';
 import useSound from 'use-sound';
 
-import './App.less';
+// import './App.less';
 import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg';
-
-const { Title, Text } = Typography;
 
 const App = () => {
   const [timer, setTimer] = useState(0);
@@ -55,22 +51,22 @@ const App = () => {
   };
 
   return (
-    <Space direction="vertical" style={{ textAlign: 'center', margin: '3rem' }}>
-      <Title className={giggle && 'App-Tomato-TimesUp'}>
+    <div style={{ textAlign: 'center', margin: '3rem' }}>
+      <h1 className={giggle && 'App-Tomato-TimesUp'}>
         <span role="img" aria-label="Tomate">
           🍅
         </span>
-      </Title>
-      <Space>
-        <Button type="primary" onClick={() => startTimer(25 * 60)}>
+      </h1>
+      <div>
+        <button type="primary" onClick={() => startTimer(25 * 60)}>
           25:00
-        </Button>
-        <Button type="primary" onClick={() => startTimer(45 * 60)}>
+        </button>
+        <button type="primary" onClick={() => startTimer(45 * 60)}>
           45:00
-        </Button>
-      </Space>
+        </button>
+      </div>
       {countdown > 0 && (
-        <Text
+        <p
           style={{
             fontSize: '44px',
             marginTop: '0.5em',
@@ -79,10 +75,10 @@ const App = () => {
           }}
         >
           {formatMinutes(countdown)} : {formatSeconds(countdown)}
-        </Text>
+        </p>
       )}
-    </Space>
+    </div>
   );
 };
 
-export default App;
+export default App

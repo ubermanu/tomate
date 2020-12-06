@@ -1,4 +1,5 @@
-import reactPlugin from 'vite-plugin-react'
+// @ts-check
+import reactPlugin from 'vite-plugin-react';
 
 /**
  * @type { import('vite').UserConfig }
@@ -6,9 +7,6 @@ import reactPlugin from 'vite-plugin-react'
 const config = {
   jsx: 'react',
   plugins: [reactPlugin],
-  optimizeDeps: {
-    exclude: ['prop-types']
-  }
-}
+};
 
-export default config
+export default config;
