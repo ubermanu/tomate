@@ -1,0 +1,23 @@
+html {
+  overflow: auto;
+}
+
+body {
+  background-color: #c0392b;
+  min-height: 100vh;
+}
+
+@keyframes giggle {
+  0% {
+    transform: rotate(5deg);
+    transform-origin: 50% 100%;
+  }
+  50% {
+    transform: rotate(-5deg);
+    transform-origin: 50% 100%;
+  }
+}
+
+.App-Tomato-TimesUp {
+  animation: giggle 300ms infinite 0s ease-in;
+}

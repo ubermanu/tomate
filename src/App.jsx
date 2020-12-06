@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import useSound from 'use-sound';
-
-// import './App.less';
+import classNames from 'classnames';
+import 'bulma/css/bulma.css';
+import './App.css';
 import bellSfx from './media/484344__inspectorj__bike-bell-ding-single-01-01.ogg';
 
 const App = () => {
@@ -51,29 +52,24 @@ const App = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', margin: '3rem' }}>
-      <h1 className={giggle && 'App-Tomato-TimesUp'}>
+    <div className="container has-text-centered has-text-light p-6">
+      <h1 className={classNames('title', 'is-1', giggle && 'App-Tomato-TimesUp')}>
         <span role="img" aria-label="Tomate">
           🍅
         </span>
       </h1>
-      <div>
-        <button type="primary" onClick={() => startTimer(25 * 60)}>
+      <div className="buttons" style={{ justifyContent: 'center' }}>
+        <button className="button is-dark"
+                onClick={() => startTimer(25 * 60)}>
           25:00
         </button>
-        <button type="primary" onClick={() => startTimer(45 * 60)}>
+        <button className="button is-dark"
+                onClick={() => startTimer(45 * 60)}>
           45:00
         </button>
       </div>
       {countdown > 0 && (
-        <p
-          style={{
-            fontSize: '44px',
-            marginTop: '0.5em',
-            color: 'white',
-            textShadow: '1px 1px 0 rgba(0, 0, 0, 0.4)',
-          }}
-        >
+        <p className="is-size-1 mt-2">
           {formatMinutes(countdown)} : {formatSeconds(countdown)}
         </p>
       )}
