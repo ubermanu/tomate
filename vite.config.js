@@ -8,6 +8,7 @@ import manifest from './src/manifest.json';
 const config = {
   jsx: 'react',
   plugins: [reactPlugin, VitePWA({ manifest })],
+  assetsDir: 'assets', // Use path without underscore for gh-pages
 };
 
 export default config;
