@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bulma": "^0.9.1",
