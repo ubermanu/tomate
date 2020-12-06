@@ -107,17 +107,17 @@ define("./sw.js",['./workbox-3b8b670f'], function (workbox) { 'use strict';
    */
 
   workbox.precacheAndRoute([{
-    "url": "_assets/howler.aed38292.js",
+    "url": "assets/howler.aed38292.js",
     "revision": "672f6b358f28924c5d33ce0e0df3bd4a"
   }, {
-    "url": "_assets/index.74300c32.js",
-    "revision": "14243bfc4216033a0465ee0be624c909"
+    "url": "assets/index.74300c32.js",
+    "revision": "e3737b249a1869de670971a3b6824d6f"
   }, {
-    "url": "_assets/style.22d25464.css",
+    "url": "assets/style.22d25464.css",
     "revision": "6f81802d3ff45fccacf5f842d42cd439"
   }, {
     "url": "index.html",
-    "revision": "450e8768ed0a90e4b4967c60a675145c"
+    "revision": "713fbd5c9f1c6a494faeb1826be38ff0"
   }], {});
 
 });
