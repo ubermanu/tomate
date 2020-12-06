@@ -1,5 +1,10 @@
 {
   "name": "Tomate",
+  "short_name": "tomate",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "en",
   "description": "A simple pomodoro timer",
   "icons": [
     {
@@ -13,8 +18,5 @@
       "sizes": "144x144"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#000000"
 }
