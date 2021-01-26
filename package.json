@@ -2,7 +2,7 @@
   "name": "tomate",
   "description": "Simple pomodoro timer",
   "homepage": "https://ubermanu.github.io/tomate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
