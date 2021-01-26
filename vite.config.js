@@ -5,10 +5,7 @@ import manifest from './src/manifest.json';
 /**
  * @type { import('vite').UserConfig }
  */
-const config = {
+export default {
   jsx: 'react',
-  plugins: [reactPlugin, VitePWA({ manifest })],
-  assetsDir: 'assets', // Use path without underscore for gh-pages
+  plugins: [reactPlugin, VitePWA({ manifest })]
 };
-
-export default config;
